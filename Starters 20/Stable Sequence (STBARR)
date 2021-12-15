@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+#define ll long long
+#define mod 1000000007
+using namespace std;
+
+
+
+int main(){
+ios_base::sync_with_stdio(false); cin.tie(0);
+int t; cin >> t; while(t--){
+    int n;
+    cin >> n;
+    vector<int> v(n);
+    for(int i = 0; i < n; i++) cin >> v[i];
+
+    if(count(v.begin(), v.end(), v[0]) == n) cout << "0\n";
+    else if(v[n - 1] == *max_element(v.begin(), v.end())) cout << "1\n";
+    else cout << "2\n";
+}
+    return 0;
+}

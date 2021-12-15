@@ -1,0 +1,16 @@
+#include <bits/stdc++.h>
+#define ll long long
+#define mod 1000000007
+using namespace std;
+
+
+
+int main(){
+ios_base::sync_with_stdio(false); cin.tie(0);
+char a, b;
+cin >> a >> b;
+if(a == b) cout << a << "\n";
+else if(a == 'R' || b == 'R') cout << "R\n";
+else if(a == 'B' || b == 'B') cout << "B\n";
+    return 0;
+}

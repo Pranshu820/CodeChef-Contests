@@ -1,0 +1,32 @@
+#include <iostream>
+#include <string.h>
+using namespace std;
+
+int main() {
+	int poscode=0;
+	int poschef=0;
+	
+	int t,n;
+	cin>>t;
+	
+	while(t--)
+	{
+	    string s;
+	    cin>>n;
+	    cin>>s;
+	    
+	    poscode=s.find("code");
+	    poschef=s.find("chef");
+	    
+	    if(poscode<poschef)
+	    cout<<"AC"<<"\n";
+	    
+	    else cout<<"WA"<<"\n";
+	    
+	}
+
+    // string s = "Pranshuisaboy";
+    // cout << s.find("a");
+	
+	return 0;
+}

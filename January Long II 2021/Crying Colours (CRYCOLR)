@@ -1,0 +1,57 @@
+#include <bits/stdc++.h>
+#define ll long long
+#define mod 1000000007
+using namespace std;
+
+
+
+int main(){
+ios_base::sync_with_stdio(false); cin.tie(0);
+int t; cin >> t; while(t--){
+    int n;
+    cin >> n;
+    int r1, g1, b1, r2, g2, b2, r3, g3, b3;
+    cin >> r1 >> g1 >> b1 >> r2 >> g2 >> b2 >> r3 >> g3 >> b3;
+
+    int cnt = 0;
+    
+    int x = min(r2, g1);
+    cnt += x;
+    r1 += x; r2 -= x;
+    g2 += x; g1 -= x;
+
+    int y = min(g3, b2);
+    cnt += y;
+    b3 += y; b2 -= y;
+    g2 += y; g3 -= y;
+
+    int z = min(r3, b1);
+    cnt += z;
+    r1 += z; r3 -= z;
+    b3 += z; b1 -= z;
+
+   if(r1 + g2 + b3 == 3 * n) cout << cnt << "\n";
+
+   else{
+       while(r1 + g2 + b3 != 3 * n){
+           int a = min(g3, b1);
+           cnt += a;
+           g1 += a; g3 -= a;
+           b3 += a; b1 -= a;
+
+           int b = min(r2, g1);
+           cnt += b;
+           r1 += b; r2 -= b;
+           g2 += b; g1 -= b;
+
+           int c = min(r3, b2);
+           cnt += c;
+           b3 += c; b2 -= c;
+           r2 += c; r3 -= c;
+       }
+       cout << cnt << "\n";
+   }
+    
+}
+    return 0;
+}

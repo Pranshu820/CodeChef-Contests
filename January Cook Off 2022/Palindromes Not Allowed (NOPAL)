@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+
+
+int main(){
+ios_base::sync_with_stdio(false); cin.tie(0);
+int t; 
+cin >> t; 
+while(t--){
+
+  int n; cin>>n;
+  if(n == 1) cout << "a\n";
+  else if(n == 2) cout << "ab\n";
+  else if(n == 3) cout << "abc\n";
+  else{
+      int a = n / 3;
+      for(int i = 1; i <= a; i++) cout << "abc";
+
+      if(n % 3 == 1) cout << "a\n";
+      else if(n % 3 == 2) cout << "ab\n";
+      else cout << "\n";
+  }
+
+
+}
+    return 0;
+}

@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+#define ll long long
+#define mod 1000000007
+using namespace std;
+
+
+
+int main(){
+ios_base::sync_with_stdio(false); cin.tie(0);
+int t; cin >> t; while(t--){
+	int a, b, c, p, q, r, ans = 0;
+	cin >> a >> b >> c >> p >> q >> r;
+
+	int tot = p + q + r;
+
+	int maxi = max(p - a, max(q - b, r - c));
+	int arr[3] = {p - a, q - b, r - c};
+
+	if(arr[0] == maxi) ans = p + b + c;
+	else if(arr[1] == maxi) ans = a + q + c;
+	else ans = a + b + r;
+
+   if(ans > tot/2) cout << "YES\n";
+   else cout << "NO\n";
+
+
+	
+}
+	return 0;
+}

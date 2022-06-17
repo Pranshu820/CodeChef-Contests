@@ -1,0 +1,57 @@
+#include <bits/stdc++.h>
+#define pi 3.141592653589793238462
+#define mod 1000000007
+#define ll long long
+#define ld long double
+#define vi vector<int>
+#define vll vector<ll>
+#define all(v) v.begin(), v.end()
+#define acc(v) accumulate(all(v), 0)
+#define pb push_back
+#define isort(v) sort(all(v))
+#define dsort(v) sort(v.rbegin(), v.rend())
+#define in(v) for(auto &i : v) cin >> i
+#define out(v) for(auto &i : v) cout << i << ' '
+using namespace std;
+
+
+
+void solve(){
+    int n, x;
+    cin >> n >> x;
+    string ans = "";
+    if (x == 1)
+    {
+        for(int i = 0; i < n; i++) cout << 'a';
+        cout << endl;
+        return;
+    }
+    if ((x > (n / 2) && n % 2 == 0) || (n % 2 == 1 && x > (n / 2 + 1))) {
+        cout << -1 << endl;
+        return;
+    }
+    if(!(n & 1)){
+    for (int i = 0; i < x - 1; i++) ans += i + 'a';
+    for (int i = 0; i < n / 2 - x+1;i++) ans += (x-1) + 'a';
+    string temp = ans;
+    reverse(temp.begin(), temp.end());
+    ans += temp;
+    }
+    else{
+        for (int i = 0; i < x - 1; i++)   ans += i + 'a';
+        for (int i = 1; i <= (n / 2) - x+1 ; i++)  ans += (x - 1) + 'a';
+        string temp = ans;
+        ans += (x - 1) + 'a';
+        reverse(temp.begin(), temp.end());
+        ans += temp;
+    }
+    cout << ans << endl;
+}
+
+int main(){
+ios_base::sync_with_stdio(false); cin.tie(0);
+int t = 1;
+cin >> t; // Comment this line if there is only one TC
+while(t --> 0) solve();
+return 0;
+}
